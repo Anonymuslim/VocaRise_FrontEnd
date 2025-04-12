@@ -93,7 +93,7 @@ generateBtn.addEventListener('click', async () => {
   }
 
   if (!audioFile) {
-    showError('Veuillez importer un fichier audio');
+    showError('Veuillez importer un fichier audio ');
     return;
   }
 
@@ -107,7 +107,7 @@ generateBtn.addEventListener('click', async () => {
 
   try {
     loadingPopup.classList.remove('hidden');
-    const response = await fetch('https://eventually-sales-relatives-debian.trycloudflare.com/api/clone-voice', {
+    const response = await fetch('https://vocarise-backend-production.up.railway.app/api/clone-voice', {
       method: 'POST',
       body: formData
     });
