@@ -107,7 +107,7 @@ generateBtn.addEventListener('click', async () => {
 
   try {
     loadingPopup.classList.remove('hidden');
-    const response = await fetch('https://chilly-symbols-repeat.loca.lt/api/clone-voice', {
+    const response = await fetch('https://7e884b7cf14486fb941ccd7ee076814f.serveo.net/api/clone-voice', {
       method: 'POST',
       body: formData
     });
