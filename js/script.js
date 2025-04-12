@@ -107,7 +107,7 @@ generateBtn.addEventListener('click', async () => {
 
   try {
     loadingPopup.classList.remove('hidden');
-    const response = await fetch('https://7e884b7cf14486fb941ccd7ee076814f.serveo.net/api/clone-voice', {
+    const response = await fetch('https://d2d5ba5302cdedd158bfd50deef9bfa0.serveo.net/api/clone-voice', {
       method: 'POST',
       body: formData
     });
