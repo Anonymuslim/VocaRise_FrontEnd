@@ -117,6 +117,7 @@ generateBtn.addEventListener('click', async () => {
     const result = await response.json();
 
     if (result.success && result.audio_url) {
+      console("OKKKKKKKKKKKKKKKKKKKKKKKKKKKK")
       resultAudio.src = result.audio_url;
       resultAudio.load();
       resultContainer.classList.remove('hidden');
