@@ -107,7 +107,7 @@ generateBtn.addEventListener('click', async () => {
 
   try {
     loadingPopup.classList.remove('hidden');
-    const response = await fetch('https://vocarise-backend-production.up.railway.app/api/clone-voice', {
+    const response = await fetch('https:/vocarisebackend-production.up.railway.app/api/clone-voice', {
       method: 'POST',
       body: formData
     });
@@ -118,25 +118,8 @@ generateBtn.addEventListener('click', async () => {
 
     if (result.success && result.audio_url) {
       resultAudio.src = result.audio_url;
-      console.log("resuuuuult  ", result.audio_url)
       resultAudio.load();
       resultContainer.classList.remove('hidden');
-
-      /*downloadBtn.onclick = () => {
-        const a = document.createElement('a');
-        
-        // Vérifie si l'URL est valide avant d'essayer de télécharger
-        if (!result.audio_url) {
-          showError('Erreur : L\'URL de l\'audio est invalide.');
-          return;
-        }
-
-        a.href = result.audio_url;
-        a.download = 'voix-clonee.mp3';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      };*/
 
       downloadBtn.onclick = async () => {
         if (!result.audio_url) {
