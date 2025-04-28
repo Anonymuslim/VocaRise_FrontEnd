@@ -122,7 +122,7 @@ generateBtn.addEventListener('click', async () => {
       resultAudio.load();
       resultContainer.classList.remove('hidden');
 
-      downloadBtn.onclick = () => {
+      /*downloadBtn.onclick = () => {
         const a = document.createElement('a');
         
         // Vérifie si l'URL est valide avant d'essayer de télécharger
@@ -136,9 +136,9 @@ generateBtn.addEventListener('click', async () => {
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-      };
+      };*/
 
-      /*downloadBtn.onclick = async () => {
+      downloadBtn.onclick = async () => {
         if (!result.audio_url) {
           showError('Erreur : L\'URL de l\'audio est invalide.');
           return;
@@ -159,7 +159,7 @@ generateBtn.addEventListener('click', async () => {
         } catch (error) {
           showError('Erreur lors du téléchargement : ' + error.message);
         }
-      };*/
+      };
 
       resultContainer.scrollIntoView({ behavior: 'smooth' });
     } else {
