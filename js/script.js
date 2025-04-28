@@ -124,12 +124,42 @@ generateBtn.addEventListener('click', async () => {
 
       downloadBtn.onclick = () => {
         const a = document.createElement('a');
+        
+        // Vérifie si l'URL est valide avant d'essayer de télécharger
+        if (!result.audio_url) {
+          showError('Erreur : L\'URL de l\'audio est invalide.');
+          return;
+        }
+
         a.href = result.audio_url;
         a.download = 'voix-clonee.mp3';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
       };
+
+      /*downloadBtn.onclick = async () => {
+        if (!result.audio_url) {
+          showError('Erreur : L\'URL de l\'audio est invalide.');
+          return;
+        }
+      
+        try {
+          // Récupérer l'audio via l'URL
+          const response = await fetch(result.audio_url);
+          
+          if (!response.ok) throw new Error('Échec de la récupération du fichier audio');
+          
+          // Convertir le fichier audio en Blob
+          const audioBlob = await response.blob();
+          
+          // Utiliser FileSaver.js pour forcer le téléchargement
+          const fileName = 'voix-clonee.mp3'; // Nom du fichier à télécharger
+          saveAs(audioBlob, fileName); // saveAs est fourni par FileSaver.js
+        } catch (error) {
+          showError('Erreur lors du téléchargement : ' + error.message);
+        }
+      };*/
 
       resultContainer.scrollIntoView({ behavior: 'smooth' });
     } else {
