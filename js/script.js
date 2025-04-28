@@ -107,7 +107,7 @@ generateBtn.addEventListener('click', async () => {
 
   try {
     loadingPopup.classList.remove('hidden');
-    const response = await fetch('https:/vocarisebackend-production.up.railway.app/api/clone-voice', {
+    const response = await fetch('https://vocarisebackend-production.up.railway.app/api/clone-voice', {
       method: 'POST',
       body: formData
     });
